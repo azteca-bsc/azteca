@@ -1,0 +1,23 @@
+# AZTECA — machine-readable facts
+
+name: AZTECA
+symbol: AZTC
+chain: BNB Smart Chain (chainId 56)
+standard: ERC-721
+supply: 4000
+paid_price_bnb: 0.001
+free_claim: 1 per wallet, requires a verified X post first (EIP-712 permit from the gate)
+site: https://azteca-bsc.github.io/azteca/
+
+nft_contract: 0x1A5260A93bed254b7317Fe3A6dBA17C86b089Cfd
+market_contract: 0x8d881731115f4a7Dec6cAa86752E87baC32cccdB
+gate_endpoint: CONFIG.GATE in the site's index.html (path /azteca)
+mint_window: opens 2026-11-15 13:00 UTC (unix 1794747600), closes 2026-11-22 13:00 UTC (unix 1795352400)
+
+Mechanics:
+- claimFree(handleHash, deadline, signature): free mint gated by a gate-signed EIP-712 permit.
+  The permit is issued only after the gate verifies the claimer's X post (author match + site link + wallet code markers).
+  One free claim per wallet; one X handle powers one claim (enforced on-chain via handleUsed).
+- mintPaid(qty): public paid mint, exact payment qty * 0.001 BNB, no post required.
+- All mints are sealed (shared carved-stone coffer metadata) until one collective reveal after the window closes.
+- Built-in non-custodial market, 2.5% fee; sealed boxes are tradable before reveal.

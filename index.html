@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZTECA — 4,000 Stone Idols on BNB Chain</title>
+<meta name="description" content="4,000 Aztec stone idols and jade masks sealed in a carved stone coffer on BNB Smart Chain. First idol free — post first, then claim. Paid mints 0.001 BNB. All reveal at once.">
+<meta property="og:title" content="AZTECA">
+<meta property="og:description" content="4,000 stone idols, sealed in a carved coffer. First one free — post first, then claim.">
+<meta property="og:image" content="images/box.webp">
+<link rel="icon" href="images/box.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf3df; --bg2:#fdf8ea; --panel:#fffaf0; --panel2:#f6ead0;
+  --line:#dcc794; --ink:#26221a; --inksoft:#4c4436;
+  --emerald:#0e7a4f; --emerald2:#0a5c3c; --jade:#37b58a;
+  --gold:#c9a227; --gold2:#97761a; --terra:#c1502e; --terra2:#a03e21;
+  --text:#26221a; --muted:#72664e; --bad:#b3271a; --good:#1e7d32;
+  --dark:#1c1a14;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cpath d='M4 32 V12 H28 V24 H16 V20 H24' fill='none' stroke='%230a5c3c' stroke-width='3'/%3E%3Cpath d='M40 32 V12 H64 V24 H52 V20 H60' fill='none' stroke='%23c1502e' stroke-width='3'/%3E%3C/svg%3E");
+  background-size:72px 36px;}
+h1,h2,h3,.disp{font-family:'Marcellus',serif;letter-spacing:.05em;font-weight:400}
+a{color:var(--emerald2)}
+.wrap{margin:0 auto;padding:0 20px;position:relative;z-index:1}
+nav{position:sticky;top:0;z-index:60;background:rgba(250,243,223,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:54px}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Marcellus',serif;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:.22em}
+.logo img{width:30px;height:30px;object-fit:contain}
+.nav-links{display:flex;gap:22px;margin-left:auto}
+.nav-links a{color:var(--inksoft);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.nav-links a:hover{color:var(--terra)}
+.btn{display:inline-block;background:var(--terra);color:#fff;border:2px solid var(--ink);border-radius:6px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .08s, box-shadow .08s;font-family:'Inter',sans-serif}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:4px 4px 0 var(--ink)}
+.btn.ghost{background:var(--panel);color:var(--ink)}
+.btn.em{background:var(--emerald)}
+.btn.small{padding:9px 16px;font-size:14px}
+#connectBtn{margin-left:6px}
+/* ---------- falling leaves ---------- */
+#leaves{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.leaf{position:absolute;top:-6vh;opacity:0;animation:fall linear infinite}
+.leaf svg{display:block;animation:sway ease-in-out infinite alternate}
+@keyframes fall{0%{transform:translateY(0);opacity:0}7%{opacity:.75}88%{opacity:.6}100%{transform:translateY(112vh);opacity:0}}
+@keyframes sway{from{transform:translateX(-16px) rotate(-28deg)}to{transform:translateX(16px) rotate(28deg)}}
+/* ---------- pyramid tiers ---------- */
+.tier{margin:0 auto;position:relative;z-index:1}
+.tier-1{max-width:720px}.tier-2{max-width:920px}.tier-3{max-width:1060px}.tier-4{max-width:1180px}
+.stepbar{display:flex;flex-direction:column;align-items:center;gap:5px;margin:0 auto 26px}
+.stepbar i{display:block;height:9px;border:2px solid var(--ink);border-radius:3px}
+.stepbar i:nth-child(1){width:110px;background:var(--gold)}
+.stepbar i:nth-child(2){width:210px;background:var(--emerald)}
+.stepbar i:nth-child(3){width:310px;background:var(--terra)}
+.tier-head{text-align:center;margin-bottom:30px}
+.tier-head h2{font-size:34px;color:var(--ink)}
+.tier-head p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.tier-head .sun{display:block;margin:0 auto 10px}
+/* ---------- hero ---------- */
+.hero{min-height:calc(100vh - 54px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:54px 20px 30px;position:relative;overflow:hidden}
+.hero>*{position:relative;z-index:1}
+.hero .kicker{color:var(--emerald2);font-weight:700;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase}
+.stage{position:relative;width:min(430px,76vw);margin:26px auto 4px}
+.halo{position:absolute;left:50%;top:44%;width:560px;height:560px;max-width:130vw;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg, rgba(201,162,39,.34) 0deg 5deg, rgba(201,162,39,0) 5deg 11deg);
+  -webkit-mask-image:radial-gradient(circle, #000 30%, transparent 68%);mask-image:radial-gradient(circle, #000 30%, transparent 68%);
+  animation:spin 70s linear infinite}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.sundisc{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);pointer-events:none}
+.floatwrap{animation:bob 6s ease-in-out infinite;position:relative;z-index:1}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.tilt{transition:transform .25s ease;transform-style:preserve-3d;will-change:transform}
+.tilt img{width:100%;display:block;filter:drop-shadow(0 6px 14px rgba(38,34,26,.18))}
+.boxshadow{width:62%;height:26px;margin:16px auto 0;background:radial-gradient(ellipse at center, rgba(38,34,26,.42) 0%, rgba(38,34,26,0) 68%);border-radius:50%;animation:shpulse 6s ease-in-out infinite}
+@keyframes shpulse{0%,100%{transform:scaleX(1);opacity:.85}50%{transform:scaleX(.84);opacity:.55}}
+.hero h1{font-size:clamp(72px,14vw,124px);line-height:1;color:var(--ink);letter-spacing:.1em;margin-top:22px}
+.hero h1 span{color:var(--terra)}
+.hero .rule{display:flex;align-items:center;gap:10px;margin:16px auto 16px}
+.hero .rule i{display:block;height:3px;background:var(--emerald);width:74px}
+.hero .rule b{width:11px;height:11px;background:var(--gold);transform:rotate(45deg);border:1.5px solid var(--ink)}
+.hero .sub{font-size:18px;color:var(--ink);max-width:580px}
+.hero .sub b{color:var(--terra)}
+.herostat{margin-top:20px;display:inline-block;background:#fffdf6;border:2px solid var(--ink);border-radius:999px;padding:9px 22px;font-size:15.5px;box-shadow:4px 4px 0 var(--emerald)}
+.herostat b{font-family:'Marcellus',serif;color:var(--terra);font-size:18px}
+.cdchip{margin-top:12px;display:inline-block;background:var(--ink);color:#f6ead0;border-radius:999px;padding:7px 18px;font-size:13.5px;letter-spacing:.06em}
+.cdchip b{color:var(--gold);font-family:'Marcellus',serif;font-size:15px}
+.scrolldown{margin-top:32px;background:var(--panel);border:2px solid var(--ink);color:var(--ink);border-radius:999px;padding:10px 22px;font-size:13.5px;font-weight:600;letter-spacing:.1em;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:4px 4px 0 var(--ink)}
+.scrolldown:hover{color:var(--terra)}
+.pyrband{line-height:0;position:relative;z-index:1}
+.pyrband svg{display:block;width:100%;height:92px}
+/* ---------- panels ---------- */
+section{padding:58px 0;position:relative}
+.panel{background:var(--panel);border:2px solid var(--ink);border-radius:10px;padding:30px;box-shadow:9px 9px 0 rgba(14,122,79,.8)}
+.panel.terra-sh{box-shadow:9px 9px 0 rgba(193,80,46,.8)}
+.panel h3{font-size:22px;color:var(--ink)}
+.panel p{color:var(--muted);font-size:14.5px}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;color:#fff;background:var(--terra);border:1.5px solid var(--ink);border-radius:4px;padding:3px 10px;margin-bottom:12px}
+.tag.dim{background:transparent;color:var(--emerald2);border:1.5px solid var(--emerald2)}
+.divider{border:0;border-top:1.5px dashed var(--line);margin:28px 0}
+.field{margin-top:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--inksoft);margin-bottom:6px}
+.field input{width:100%;background:#fff;border:2px solid var(--ink);border-radius:8px;color:var(--ink);padding:12px 14px;font-size:15px}
+.field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.status{margin-top:12px;font-size:14px;min-height:20px;font-weight:600}
+.status.ok{color:var(--good)} .status.err{color:var(--bad)} .status.wait{color:var(--gold2)}
+.qtyrow{display:flex;align-items:center;gap:14px;margin-top:16px}
+.qtybtn{width:42px;height:42px;border-radius:8px;border:2px solid var(--ink);background:var(--panel);color:var(--ink);font-size:20px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.qtybtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.qtyval{font-family:'Marcellus',serif;font-size:24px;min-width:44px;text-align:center;color:var(--ink)}
+.costline{margin-top:10px;color:var(--muted);font-size:14.5px}
+.costline b{color:var(--ink)}
+.claim-grid{display:grid;grid-template-columns:1.5fr .95fr;gap:22px;align-items:start}
+.side-stats{display:grid;gap:12px}
+.sstat{background:var(--panel);border:2px solid var(--ink);border-radius:10px;padding:17px 20px;box-shadow:6px 6px 0 rgba(38,34,26,.9)}
+.sstat b{display:block;font-family:'Marcellus',serif;font-size:26px;color:var(--emerald2)}
+.sstat span{color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.09em}
+.snote{background:#eef7ee;border:2px solid var(--ink);border-left:6px solid var(--emerald);border-radius:10px;padding:16px 18px;color:var(--inksoft);font-size:14.5px}
+.supplyline{margin:22px 0 0;text-align:center;color:var(--muted);font-size:14.5px}
+.supplyline b{color:var(--terra);font-family:'Marcellus',serif;font-size:17px}
+/* ---------- traits ---------- */
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:var(--panel);border:2px solid var(--ink);border-radius:10px;padding:20px;box-shadow:6px 6px 0 rgba(38,34,26,.85)}
+.tcard .tic{width:40px;height:40px;margin-bottom:10px}
+.tcard h4{font-family:'Marcellus',serif;font-size:18px;color:var(--emerald2);margin-bottom:6px}
+.tcard p{color:var(--muted);font-size:13.5px}
+.rarity{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.rar{border:2px solid var(--ink);border-radius:999px;padding:8px 18px;background:var(--panel);font-size:14px;font-weight:600;box-shadow:3px 3px 0 var(--ink)}
+.rar b{font-family:'Marcellus',serif}
+.rar .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;border:1px solid var(--ink)}
+/* ---------- market ---------- */
+.lrow{display:flex;align-items:center;gap:16px;background:var(--panel);border:2px solid var(--ink);border-radius:10px;padding:10px 16px;margin-bottom:10px;flex-wrap:wrap;box-shadow:5px 5px 0 rgba(38,34,26,.9)}
+.lrow img{width:54px;height:54px;object-fit:contain}
+.lrow .ltitle{font-family:'Marcellus',serif;color:var(--emerald2);font-size:17px}
+.lrow .lprice{font-weight:700;font-size:16px;color:var(--ink)}
+.lrow .lstate{color:var(--muted);font-size:13.5px}
+.lrow input{width:120px;background:#fff;border:2px solid var(--ink);border-radius:8px;color:var(--ink);padding:8px 10px;font-size:14px}
+.lrow .spacer{flex:1}
+/* ---------- agents ---------- */
+details.agent{background:var(--panel);border:2px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:6px 6px 0 rgba(38,34,26,.9)}
+details.agent summary{cursor:pointer;padding:18px 22px;font-family:'Marcellus',serif;font-size:18px;color:var(--emerald2);list-style:none}
+details.agent summary::-webkit-details-marker{display:none}
+details.agent summary:hover{color:var(--terra)}
+details.agent .inner{padding:0 22px 22px}
+pre{background:var(--ink);border:2px solid var(--ink);border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.6;color:#f6ead0;white-space:pre-wrap}
+.chips{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;justify-content:center}
+.chip{border:2px solid var(--ink);background:var(--panel);color:var(--emerald2);border-radius:999px;padding:8px 18px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)}
+.chip:hover{background:#eef7ee;color:var(--terra)}
+footer{border-top:3px solid var(--ink);padding:26px 0 36px;color:var(--muted);font-size:13.5px;text-align:center;position:relative;z-index:1}
+#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(80px);background:var(--panel);border:2px solid var(--ink);color:var(--ink);padding:12px 20px;border-radius:10px;font-size:14.5px;opacity:0;transition:all .3s;z-index:99;max-width:90vw;text-align:center;box-shadow:5px 5px 0 rgba(38,34,26,.9)}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+/* ---------- stepped scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:translateY(0)}
+.sil{position:absolute;pointer-events:none;z-index:0}
+@media(max-width:900px){
+  .claim-grid{grid-template-columns:1fr}
+  .traits{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .tier-head h2{font-size:27px}
+}
+@media(max-width:560px){ .traits{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div id="leaves" aria-hidden="true"></div>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#"><img src="images/box.webp" alt="">AZTECA</a>
+    <div class="nav-links">
+      <a href="#claim">Claim</a>
+      <a href="#idols">The Idols</a>
+      <a href="#market">Marketplace</a>
+      <a href="#agents">For Agents</a>
+    </div>
+    <button class="btn small" id="connectBtn">Connect Wallet</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="sil" style="left:-30px;top:0;width:340px;opacity:.16" aria-hidden="true">
+<svg viewBox="0 0 340 190" width="100%"><g fill="#0a5c3c"><path d="M10 8 Q90 -14 150 26 Q84 34 44 22 Q110 44 128 84 Q72 62 40 44 Q76 84 66 128 Q38 84 10 62 Q30 96 18 138 Q2 84 10 8Z"/><path d="M180 0 Q250 -10 300 22 Q240 30 205 16 Q258 40 268 74 Q222 56 198 40 Q226 76 218 112 Q196 76 176 56 Q192 88 184 122 Q168 74 180 0Z"/></g></svg>
+</div>
+  <div class="sil" style="right:-30px;top:0;width:340px;transform:scaleX(-1);opacity:.16" aria-hidden="true">
+<svg viewBox="0 0 340 190" width="100%"><g fill="#0a5c3c"><path d="M10 8 Q90 -14 150 26 Q84 34 44 22 Q110 44 128 84 Q72 62 40 44 Q76 84 66 128 Q38 84 10 62 Q30 96 18 138 Q2 84 10 8Z"/><path d="M180 0 Q250 -10 300 22 Q240 30 205 16 Q258 40 268 74 Q222 56 198 40 Q226 76 218 112 Q196 76 176 56 Q192 88 184 122 Q168 74 180 0Z"/></g></svg>
+</div>
+  <div class="tier tier-1">
+    <div class="kicker">BNB Smart Chain · ERC-721</div>
+    <div class="stage">
+      <div class="halo" aria-hidden="true"></div>
+      <svg class="sundisc" width="300" height="300" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="30" fill="#c9a227" opacity="0.30"/><circle cx="50" cy="50" r="24" fill="none" stroke="#97761a" stroke-width="1.4" opacity="0.5"/><circle cx="50" cy="50" r="17" fill="none" stroke="#97761a" stroke-width="1.2" opacity="0.45"/><circle cx="50" cy="50" r="4.5" fill="#c1502e" opacity="0.55"/></svg>
+      <div class="floatwrap"><div class="tilt" id="boxTilt"><img src="images/box.webp" alt="The sealed AZTECA coffer"></div></div>
+      <div class="boxshadow" aria-hidden="true"></div>
+    </div>
+    <h1>AZT<span>E</span>CA</h1>
+    <div class="rule"><i></i><b></b><i></i></div>
+    <p class="sub">4,000 Aztec stone idols and jade masks, sealed inside a carved stone coffer. Nobody knows which idol sleeps in their box — until every box opens at once. The first one is <b>free</b>: post first, then claim.</p>
+    <div><span class="herostat"><b id="heroMinted">0 / 4,000</b> idols minted</span></div>
+    <div><span class="cdchip"><b id="cdVal">7 days</b> · <span id="cdLabel">Window — opens at launch</span></span></div>
+    <div><a class="scrolldown" href="#claim">Descend to the claim tier ↓</a></div>
+  </div>
+</header>
+<div class="pyrband" aria-hidden="true">
+<svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <g fill="#0a5c3c" opacity="0.14"><path d="M520 120 L660 44 H780 L920 120 Z"/><rect x="648" y="30" width="144" height="14"/><rect x="676" y="14" width="88" height="16"/><rect x="700" y="0" width="40" height="14"/></g>
+  <g fill="#c1502e" opacity="0.10"><path d="M-20 120 L120 58 H300 L460 120 Z"/><path d="M980 120 L1140 58 H1320 L1460 120 Z"/></g>
+  <g fill="#0a5c3c" opacity="0.20"><path d="M60 118 q6-26-4-44 q20 8 24 30 q12-18 4-38 q16 14 12 36 q14-8 24-2 q-16 16-60 18Z"/><path d="M1330 118 q-6-26 4-44 q-20 8-24 30 q-12-18-4-38 q-16 14-12 36 q-14-8-24-2 q16 16 60 18Z"/></g>
+</svg>
+</div>
+
+<section id="claim">
+  <div class="tier tier-2">
+    <div class="stepbar rv" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="tier-head rv">
+      <h2>Claim</h2>
+      <p>Post first. Then claim. The contract enforces the order.</p>
+    </div>
+    <div class="claim-grid">
+      <div class="panel rv">
+        <span class="tag">FREE — POST FIRST</span>
+        <h3>Your first idol</h3>
+        <p>One per wallet. Your X post is verified before the permit is issued, and the contract checks the permit — nobody skips the line.</p>
+        <div class="field">
+          <button class="btn ghost" id="postBtn" style="width:100%">1 · Post on X</button>
+        </div>
+        <div class="field">
+          <label for="postUrl">2 · Your post link</label>
+          <input id="postUrl" type="url" placeholder="https://x.com/you/status/…">
+        </div>
+        <div class="field">
+          <button class="btn em" id="freeBtn" style="width:100%">3 · Verify &amp; claim free</button>
+        </div>
+        <div class="status" id="freeStatus"></div>
+        <hr class="divider">
+        <span class="tag dim">PAID — NO POST NEEDED</span>
+        <h3>More idols</h3>
+        <p>Straight purchase. As many as you want while the window is open and stock remains.</p>
+        <div class="qtyrow">
+          <button class="qtybtn" id="qMinus">−</button>
+          <div class="qtyval" id="qVal">1</div>
+          <button class="qtybtn" id="qPlus">+</button>
+        </div>
+        <div class="costline">Total: <b id="costVal">0.001 BNB</b></div>
+        <div class="field">
+          <button class="btn" id="paidBtn" style="width:100%">Mint now</button>
+        </div>
+        <div class="status" id="paidStatus"></div>
+      </div>
+      <div class="side-stats">
+        <div class="sstat rv" style="--d:.05s"><b id="statMinted">0</b><span>Idols claimed</span></div>
+        <div class="sstat rv" style="--d:.12s"><b>4,000</b><span>Total supply</span></div>
+        <div class="sstat rv" style="--d:.19s"><b>0.001 BNB</b><span>Paid mint</span></div>
+        <div class="sstat rv" style="--d:.26s"><b>1 free</b><span>Per wallet, post first</span></div>
+        <div class="snote rv" style="--d:.33s">Every mint arrives as the sealed stone coffer. All 4,000 idols reveal together the moment the window closes — and sealed boxes can be traded on the market below until then.</div>
+      </div>
+    </div>
+    <p class="supplyline"><b id="supplyVal">0 / 4,000</b> idols claimed · every mint arrives as a sealed box</p>
+  </div>
+</section>
+
+<section id="idols">
+  <div class="sil" style="right:-40px;top:30px;width:300px;opacity:.12" aria-hidden="true">
+<svg viewBox="0 0 300 120" width="100%"><path d="M8 84 Q60 30 128 22 Q104 40 96 58 Q140 34 196 44 Q152 56 118 54 Q88 84 48 96 Q70 76 8 84Z" fill="#0a5c3c"/><g fill="#c1502e"><path d="M120 20 l10-14 4 16 12-10-2 16 14-5-8 14 14 2-12 9 10 10-15-2-2 14-9-11-11 9 1-14-14-4 13-7-6-13 14 5z"/></g></svg>
+</div>
+  <div class="tier tier-3">
+    <div class="stepbar rv" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="tier-head rv">
+      <h2>Inside the Coffer</h2>
+      <p>Six carved layers decide what sleeps inside your box. The full assignment is frozen and committed on-chain before the first mint — nobody can cherry-pick the rare ones.</p>
+    </div>
+    <div class="traits">
+      <div class="tcard rv" style="--d:0s">
+        <svg class="tic" viewBox="0 0 40 40"><circle cx="20" cy="20" r="9" fill="none" stroke="#c9a227" stroke-width="2.4"/><g stroke="#c1502e" stroke-width="2.4" stroke-linecap="round"><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3.5 3.5M28.5 28.5L32 32M32 8l-3.5 3.5M11.5 28.5L8 32"/></g></svg>
+        <h4>Idol Form</h4>
+        <p>Tlaloc Rain Idol · Skull Idol · Serpent Idol · Sun Disc Idol · Jaguar Mask · Obsidian God Mask · 6 more</p>
+      </div>
+      <div class="tcard rv" style="--d:.07s">
+        <svg class="tic" viewBox="0 0 40 40"><path d="M20 4 L35 20 L20 36 L5 20 Z" fill="none" stroke="#0a5c3c" stroke-width="2.4"/><path d="M20 12 L28 20 L20 28 L12 20 Z" fill="#37b58a" opacity=".55"/></svg>
+        <h4>Stone</h4>
+        <p>Basalt · Sandstone · Obsidian Black · Volcanic Red · Gold-Veined · Crystal Quartz · 6 more</p>
+      </div>
+      <div class="tcard rv" style="--d:.14s">
+        <svg class="tic" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="#0e7a4f" stroke-width="2.4"/><circle cx="20" cy="20" r="5" fill="#37b58a"/><circle cx="13" cy="14" r="2" fill="#0a5c3c"/><circle cx="27" cy="26" r="2" fill="#0a5c3c"/></svg>
+        <h4>Jade Inlay</h4>
+        <p>Jade Eyes · Turquoise Mosaic · Emerald Nose Plug · Full Jade Face · 6 more — some idols carry none</p>
+      </div>
+      <div class="tcard rv" style="--d:0s">
+        <svg class="tic" viewBox="0 0 40 40"><path d="M8 32 V14 H26 V26 H17 V20 H22" fill="none" stroke="#c1502e" stroke-width="2.6"/><path d="M32 8 v6" stroke="#c9a227" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <h4>Glyph</h4>
+        <p>Rain Glyph · Sun Glyph · Calendar Ring · Dual Serpent · 6 more carved reliefs — or a clean face</p>
+      </div>
+      <div class="tcard rv" style="--d:.07s">
+        <svg class="tic" viewBox="0 0 40 40"><g stroke="#0e7a4f" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M20 36 V14"/><path d="M20 16 Q8 12 6 3 Q16 4 20 12"/><path d="M20 16 Q32 12 34 3 Q24 4 20 12"/><path d="M20 22 Q11 20 8 12"/><path d="M20 22 Q29 20 32 12"/></g></svg>
+        <h4>Feather</h4>
+        <p>Quetzal Plume · Macaw Fan · Eagle Crest · Phoenix Quills · 6 more headdresses — or bare stone</p>
+      </div>
+      <div class="tcard rv" style="--d:.14s">
+        <svg class="tic" viewBox="0 0 40 40"><circle cx="20" cy="20" r="6" fill="#c9a227"/><g stroke="#97761a" stroke-width="2.2" stroke-linecap="round"><path d="M20 5v4M20 31v4M5 20h4M31 20h4M9 9l3 3M28 28l3 3M31 9l-3 3M12 28l-3 3"/></g></svg>
+        <h4>Aura</h4>
+        <p>Jungle Mist · Golden Sunrays · Emerald Glow · Solar Eclipse · 4 more — most idols rest in still air</p>
+      </div>
+    </div>
+    <div class="rarity rv">
+      <span class="rar"><span class="dot" style="background:#8a7a5c"></span>Common <b>2,700</b></span>
+      <span class="rar"><span class="dot" style="background:#37b58a"></span>Rare <b>957</b></span>
+      <span class="rar"><span class="dot" style="background:#c9a227"></span>Epic <b>301</b></span>
+      <span class="rar"><span class="dot" style="background:#c1502e"></span>Legendary <b>42</b></span>
+    </div>
+    <p class="supplyline">Assignment commitment (SHA-256): <b>f2eba7ea…cc568</b> — published in full at reveal, verifiable against the contract.</p>
+  </div>
+</section>
+
+<section id="market">
+  <div class="sil" style="left:0;bottom:0;width:100%;opacity:.08" aria-hidden="true">
+<svg viewBox="0 0 1440 90" width="100%" preserveAspectRatio="none" style="display:block"><g fill="#0a5c3c"><path d="M420 90 L580 22 H860 L1020 90 Z"/><rect x="566" y="10" width="308" height="12"/><rect x="640" y="0" width="160" height="10"/></g></svg>
+</div>
+  <div class="tier tier-4">
+    <div class="stepbar rv" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="tier-head rv">
+      <h2>Marketplace</h2>
+      <p>Sealed boxes, traded as they are. 2.5% market fee.</p>
+    </div>
+    <div id="marketRows"></div>
+    <div class="status" id="marketStatus">The market opens at launch — listings appear here once idols are minted.</div>
+    <div style="margin-top:10px"><button class="btn ghost small" id="marketRefresh">Refresh listings</button></div>
+    <div id="yourBoxes" style="margin-top:36px;display:none">
+      <h3 style="font-family:'Marcellus',serif;color:var(--gold2);font-size:21px;margin-bottom:6px">Your boxes</h3>
+      <p style="color:var(--muted);font-size:14.5px;margin:0 0 14px">Boxes held by the connected wallet. Set a price to list one — the buyer pays you directly, minus the 2.5% market fee.</p>
+      <div id="boxList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="tier tier-3">
+    <div class="stepbar rv" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="tier-head rv">
+      <h2>For Agents</h2>
+      <p>Running this for your human? Start with the machine-readable files.</p>
+    </div>
+    <div class="chips">
+      <a class="chip" href="skill.md">skill.md</a>
+      <a class="chip" href="llms.txt">llms.txt</a>
+    </div>
+    <details class="agent rv">
+      <summary>Show the full agent prompt</summary>
+      <div class="inner">
+        <pre id="agentPrompt">You are helping your human claim an AZTECA idol on BNB Smart Chain.
+
+FREE CLAIM — post first, in this exact order:
+1. Give your human this template to post on X (replace WALLET_CODE with the last 6 hex characters of your wallet address, lowercase):
+
+Claiming my AZTECA idol 🗿
+
+4,000 Aztec stone idols &amp; jade masks, sealed in a carved stone coffer on BNB Chain.
+
+First one is free — if you post first.
+
+My wallet code: WALLET_CODE
+
+Start here:
+https://azteca-bsc.github.io/azteca/
+
+#AZTECA #BNBChain
+
+One-click: open https://x.com/intent/tweet?text=Claiming%20my%20AZTECA%20idol%20%F0%9F%97%BF%0A%0A4%2C000%20Aztec%20stone%20idols%20%26%20jade%20masks%2C%20sealed%20in%20a%20carved%20stone%20coffer%20on%20BNB%20Chain.%0A%0AFirst%20one%20is%20free%20%E2%80%94%20if%20you%20post%20first.%0A%0AMy%20wallet%20code%3A%20WALLET_CODE%0A%0AStart%20here%3A%0Ahttps%3A%2F%2Fazteca-bsc.github.io%2Fazteca%2F%0A%0A%23AZTECA%20%23BNBChain (same WALLET_CODE replacement) — the post is pre-filled, your human only presses Post. Then get the post link from them.
+The post must carry two markers: the site link and the wallet code. Any post text carrying both passes; the template is preferred, not mandatory.
+2. Send the wallet address + post link to the gate: POST {GATE} {"wallet":"0x…","postUrl":"https://x.com/…/status/…"} — the gate endpoint is CONFIG.GATE in the site's index.html (path /azteca). It verifies the post and returns an EIP-712 permit.
+3. Call claimFree(handleHash, deadline, signature) on the NFT contract (address in llms.txt on the site). One free idol per wallet; one X account powers one claim.
+
+PAID MINT — no post needed:
+Call mintPaid(qty) with exactly qty × 0.001 BNB.
+
+Every mint arrives sealed in the carved stone coffer. All idols reveal together when the 7-day window closes. Sealed boxes can be traded on the built-in market (2.5% fee).</pre>
+        <div style="margin-top:14px"><button class="btn ghost small" id="copyPrompt">Copy the agent prompt</button></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">AZTECA · 4,000 stone idols · BNB Smart Chain · Sealed until reveal</div>
+</footer>
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script>
+const CONFIG = {
+  NFT: "0x1A5260A93bed254b7317Fe3A6dBA17C86b089Cfd",
+  MARKET: "0x8d881731115f4a7Dec6cAa86752E87baC32cccdB",
+  GATE: "https://permit-worker.reuniakbarpunk212.workers.dev/azteca",
+  SITE_URL: "https://azteca-bsc.github.io/azteca/",
+  RPC: "https://bsc-dataseed.binance.org",
+  PRICE: 0.001,
+  MAX: 4000,
+  START_TS: 1794747600, END_TS: 1795352400,
+  WC_PROJECT_ID: "ff5985647ed78916bed0155d2ff84a1c"
+};
+const LIVE = !CONFIG.NFT.includes("__") && !CONFIG.MARKET.includes("__");
+const ABI = [
+  "function totalMinted() view returns (uint256)",
+  "function freeClaimed(address) view returns (bool)",
+  "function claimFree(bytes32 handleHash, uint256 deadline, bytes signature)",
+  "function mintPaid(uint256 qty) payable"
+];
+const NFT_ABI = ABI.concat([
+  "function ownerOf(uint256 tokenId) view returns (address)",
+  "function getApproved(uint256 tokenId) view returns (address)",
+  "function approve(address to, uint256 tokenId)"
+]);
+const MARKET_ABI = [
+  "function listingOf(uint256 tokenId) view returns (address seller, uint256 price, bool active)",
+  "function list(uint256 tokenId, uint256 price)",
+  "function cancelListing(uint256 tokenId)",
+  "function buy(uint256 tokenId) payable"
+];
+function buildTemplate(){
+  const code = account ? account.toLowerCase().slice(-6) : "······";
+  return `Claiming my AZTECA idol 🗿
+
+4,000 Aztec stone idols & jade masks, sealed in a carved stone coffer on BNB Chain.
+
+First one is free — if you post first.
+
+My wallet code: ${code}
+
+Start here:
+${CONFIG.SITE_URL}
+
+#AZTECA #BNBChain`;
+}
+
+let eip1193 = null, account = null;
+const $ = id => document.getElementById(id);
+function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"), 4200); }
+function setStatus(id, msg, cls){ const el=$(id); el.textContent=msg; el.className="status "+(cls||""); }
+
+async function loadWC(){
+  if (window["@walletconnect/ethereum-provider"]) return true;
+  for (const u of ["https://unpkg.com/@walletconnect/ethereum-provider@2.21.0/dist/index.umd.js","https://cdn.jsdelivr.net/npm/@walletconnect/ethereum-provider@2.21.0/dist/index.umd.js"]){
+    try{ await new Promise((res,rej)=>{ const sc=document.createElement("script"); sc.src=u; sc.onload=res; sc.onerror=rej; document.head.appendChild(sc); }); if (window["@walletconnect/ethereum-provider"]) return true; }catch(e){}
+  }
+  return false;
+}
+async function connect(){
+  if (account) return account;
+  if (window.ethereum){
+    eip1193 = window.ethereum;
+  } else {
+    if (!(await loadWC())){ toast("No wallet found — install a wallet or try WalletConnect from a desktop browser."); return null; }
+    eip1193 = await window["@walletconnect/ethereum-provider"].EthereumProvider.init({ projectId: CONFIG.WC_PROJECT_ID, chains:[56], optionalChains:[56], showQrModal:true, rpcMap:{ 56: CONFIG.RPC } });
+    await eip1193.connect();
+  }
+  const prov = new ethers.BrowserProvider(eip1193);
+  const net = await prov.getNetwork();
+  if (Number(net.chainId) !== 56){
+    try{ await eip1193.request({ method:"wallet_switchEthereumChain", params:[{ chainId:"0x38" }] }); }
+    catch(e){ toast("Please switch your wallet to BNB Smart Chain."); return null; }
+  }
+  const signer = await prov.getSigner();
+  account = await signer.getAddress();
+  $("connectBtn").textContent = account.slice(0,6)+"…"+account.slice(-4);
+  refreshSupply();
+  loadMarket();
+  return account;
+}
+$("connectBtn").onclick = connect;
+
+async function readContract(){
+  const rpc = new ethers.JsonRpcProvider(CONFIG.RPC);
+  return new ethers.Contract(CONFIG.NFT, ABI, rpc);
+}
+async function writeContract(){
+  if (!(await connect())) return null;
+  const prov = new ethers.BrowserProvider(eip1193);
+  return new ethers.Contract(CONFIG.NFT, ABI, await prov.getSigner());
+}
+async function refreshSupply(){
+  if (!LIVE) return;
+  try{
+    const c = await readContract();
+    const n = Number(await c.totalMinted());
+    $("supplyVal").textContent = n.toLocaleString("en-US")+" / 4,000";
+    $("statMinted").textContent = n.toLocaleString("en-US");
+    $("heroMinted").textContent = n.toLocaleString("en-US")+" / 4,000";
+  }catch(e){}
+}
+refreshSupply();
+
+function tickCountdown(){
+  const el = $("cdVal"), lab = $("cdLabel");
+  if (!CONFIG.START_TS || !CONFIG.END_TS){ el.textContent = "7 days"; lab.textContent = "Window — opens at launch"; return; }
+  const now = Math.floor(Date.now()/1000);
+  const fmt = s => { const d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60; return (d?d+"d ":"")+String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(ss).padStart(2,"0"); };
+  if (now < CONFIG.START_TS){ el.textContent = fmt(CONFIG.START_TS-now); lab.textContent = "Until the temple gates open"; }
+  else if (now < CONFIG.END_TS){ el.textContent = fmt(CONFIG.END_TS-now); lab.textContent = "Until the window closes"; }
+  else { el.textContent = "Closed"; lab.textContent = "The window has closed"; }
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+$("postBtn").onclick = async () => {
+  if (!account){ const a = await connect(); if (!a) return; }
+  window.open("https://x.com/intent/tweet?text="+encodeURIComponent(buildTemplate()), "_blank", "noopener");
+};
+
+$("freeBtn").onclick = async () => {
+  if (!LIVE){ toast("The temple is not open yet."); return; }
+  const url = $("postUrl").value.trim();
+  if (!url){ setStatus("freeStatus","Paste your post link first.","err"); return; }
+  if (!(await connect())) return;
+  setStatus("freeStatus","Checking your post…","wait");
+  let permit;
+  try{
+    const r = await fetch(CONFIG.GATE, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ wallet: account, postUrl: url }) });
+    permit = await r.json();
+    if (!r.ok || !permit.signature) throw new Error(permit.error || "That post could not be verified.");
+  }catch(e){ setStatus("freeStatus", e.message || "Verification failed.","err"); return; }
+  setStatus("freeStatus","Post verified. Claiming your idol…","wait");
+  try{
+    const c = await writeContract();
+    const tx = await c.claimFree(permit.handleHash, permit.deadline, permit.signature);
+    await tx.wait();
+    setStatus("freeStatus","Claimed. Your sealed box is in your wallet.","ok");
+    refreshSupply(); loadMarket();
+  }catch(e){ setStatus("freeStatus","The claim was rejected by the contract.","err"); }
+};
+
+let qty = 1;
+function syncQty(){ $("qVal").textContent = qty; $("costVal").textContent = (qty*CONFIG.PRICE).toFixed(3).replace(/0+$/,"").replace(/\.$/,".0")+" BNB"; }
+$("qMinus").onclick = () => { qty = Math.max(1, qty-1); syncQty(); };
+$("qPlus").onclick = () => { qty = Math.min(50, qty+1); syncQty(); };
+syncQty();
+
+$("paidBtn").onclick = async () => {
+  if (!LIVE){ toast("The temple is not open yet."); return; }
+  if (!(await connect())) return;
+  setStatus("paidStatus","Minting…","wait");
+  try{
+    const c = await writeContract();
+    const tx = await c.mintPaid(qty, { value: ethers.parseEther((qty*CONFIG.PRICE).toString()) });
+    await tx.wait();
+    setStatus("paidStatus","Minted. Your sealed box(es) are in your wallet.","ok");
+    refreshSupply(); loadMarket();
+  }catch(e){ setStatus("paidStatus","The mint did not go through.","err"); }
+};
+
+/* ---------- market ---------- */
+function fmtBNB(wei){
+  const s = ethers.formatEther(wei);
+  return (s.includes(".") ? s.replace(/0+$/,"").replace(/\.$/,".0") : s) + " BNB";
+}
+async function readMarket(){ return new ethers.Contract(CONFIG.MARKET, MARKET_ABI, new ethers.JsonRpcProvider(CONFIG.RPC)); }
+async function readNFT(){ return new ethers.Contract(CONFIG.NFT, NFT_ABI, new ethers.JsonRpcProvider(CONFIG.RPC)); }
+async function writeMarket(){
+  if (!(await connect())) return null;
+  const prov = new ethers.BrowserProvider(eip1193);
+  return new ethers.Contract(CONFIG.MARKET, MARKET_ABI, await prov.getSigner());
+}
+async function writeNFT(){
+  if (!(await connect())) return null;
+  const prov = new ethers.BrowserProvider(eip1193);
+  return new ethers.Contract(CONFIG.NFT, NFT_ABI, await prov.getSigner());
+}
+async function inChunks(items, size, fn){
+  const out = [];
+  for (let i = 0; i < items.length; i += size){ out.push(...await Promise.all(items.slice(i, i + size).map(fn))); }
+  return out;
+}
+async function loadMarket(){
+  if (!LIVE){ setStatus("marketStatus","The market opens at launch — listings appear here once idols are minted.",""); loadBoxes(); return; }
+  const rows = $("marketRows");
+  try{
+    const nft = await readNFT();
+    const mkt = await readMarket();
+    const n = Number(await nft.totalMinted());
+    if (!n){ rows.innerHTML = ""; setStatus("marketStatus","No boxes minted yet — the first listings appear here once idols are claimed.",""); loadBoxes(); return; }
+    const ids = Array.from({length:n}, (_,i)=>i+1);
+    const all = await inChunks(ids, 25, async id => {
+      try{ const l = await mkt.listingOf(id); return { id, seller: l[0], price: l[1], active: l[2] }; }catch(e){ return null; }
+    });
+    const active = all.filter(r => r && r.active);
+    if (!active.length){ rows.innerHTML = ""; setStatus("marketStatus","No boxes are listed right now. List one of yours below once your wallet is connected.",""); loadBoxes(); return; }
+    setStatus("marketStatus", active.length + (active.length === 1 ? " box" : " boxes") + " for sale","");
+    rows.innerHTML = active.map(r => {
+      const mine = account && r.seller.toLowerCase() === account.toLowerCase();
+      return `<div class="lrow">
+        <img src="images/box.webp" alt="Sealed AZTECA box #${r.id}">
+        <div class="ltitle">AZTECA #${r.id}</div>
+        <div class="lprice">${fmtBNB(r.price)}</div>
+        <div class="spacer"></div>
+        ${mine ? `<button class="btn ghost small" data-cancel="${r.id}">Cancel listing</button>` : `<button class="btn small" data-buy="${r.id}" data-price="${r.price.toString()}">Buy</button>`}
+      </div>`;
+    }).join("");
+    rows.querySelectorAll("[data-buy]").forEach(b => b.onclick = async () => {
+      const id = Number(b.dataset.buy), price = BigInt(b.dataset.price);
+      b.disabled = true; b.textContent = "Buying…";
+      try{
+        const m = await writeMarket(); if (!m){ b.disabled=false; b.textContent="Buy"; return; }
+        const tx = await m.buy(id, { value: price }); await tx.wait();
+        toast("AZTECA #" + id + " is yours."); loadMarket();
+      }catch(e){ toast("The purchase did not go through."); b.disabled=false; b.textContent="Buy"; }
+    });
+    rows.querySelectorAll("[data-cancel]").forEach(b => b.onclick = async () => {
+      const id = Number(b.dataset.cancel);
+      b.disabled = true; b.textContent = "Cancelling…";
+      try{
+        const m = await writeMarket(); if (!m){ b.disabled=false; b.textContent="Cancel listing"; return; }
+        const tx = await m.cancelListing(id); await tx.wait();
+        toast("Listing for #" + id + " cancelled."); loadMarket();
+      }catch(e){ toast("Cancel failed."); b.disabled=false; b.textContent="Cancel listing"; }
+    });
+  }catch(e){ setStatus("marketStatus","Could not load the market right now.","err"); }
+  loadBoxes();
+}
+async function loadBoxes(){
+  const wrap = $("yourBoxes"), list = $("boxList");
+  if (!account){ wrap.style.display = "none"; return; }
+  if (!LIVE){ wrap.style.display = "block"; list.innerHTML = `<p style="color:var(--muted)">Your boxes will appear here once the temple opens.</p>`; return; }
+  try{
+    const nft = await readNFT();
+    const mkt = await readMarket();
+    const n = Number(await nft.totalMinted());
+    const ids = Array.from({length:n}, (_,i)=>i+1);
+    const owners = await inChunks(ids, 25, async id => { try{ return await nft.ownerOf(id); }catch(e){ return null; } });
+    const mine = ids.filter((id,i) => owners[i] && owners[i].toLowerCase() === account.toLowerCase());
+    wrap.style.display = "block";
+    if (!mine.length){ list.innerHTML = `<p style="color:var(--muted)">This wallet holds no AZTECA boxes yet.</p>`; return; }
+    const rows = await inChunks(mine, 25, async id => {
+      try{ const l = await mkt.listingOf(id); return { id, price: l[1], active: l[2] }; }catch(e){ return { id, price: 0n, active: false }; }
+    });
+    list.innerHTML = rows.map(r => `<div class="lrow">
+        <img src="images/box.webp" alt="Sealed AZTECA box #${r.id}">
+        <div><div class="ltitle">AZTECA #${r.id}</div><div class="lstate">${r.active ? "Listed at " + fmtBNB(r.price) : "Not listed"}</div></div>
+        <div class="spacer"></div>
+        ${r.active
+          ? `<button class="btn ghost small" data-mcancel="${r.id}">Cancel listing</button>`
+          : `<input type="number" min="0" step="0.0005" placeholder="Price in BNB" id="price-${r.id}"><button class="btn small" data-list="${r.id}">List for sale</button>`}
+      </div>`).join("");
+    list.querySelectorAll("[data-list]").forEach(b => b.onclick = async () => {
+      const id = Number(b.dataset.list);
+      const v = $("price-" + id).value.trim();
+      const price = Number(v);
+      if (!v || !(price > 0)){ toast("Enter a price in BNB first."); return; }
+      b.disabled = true; b.textContent = "Listing…";
+      try{
+        const n = await writeNFT(); if (!n){ b.disabled=false; b.textContent="List for sale"; return; }
+        const approved = await n.getApproved(id);
+        if (approved.toLowerCase() !== CONFIG.MARKET.toLowerCase()){
+          const atx = await n.approve(CONFIG.MARKET, id); await atx.wait();
+        }
+        const m = await writeMarket(); if (!m){ b.disabled=false; b.textContent="List for sale"; return; }
+        const tx = await m.list(id, ethers.parseEther(v)); await tx.wait();
+        toast("AZTECA #" + id + " listed at " + v + " BNB."); loadMarket();
+      }catch(e){ toast("Listing did not go through."); b.disabled=false; b.textContent="List for sale"; }
+    });
+    list.querySelectorAll("[data-mcancel]").forEach(b => b.onclick = async () => {
+      const id = Number(b.dataset.mcancel);
+      b.disabled = true; b.textContent = "Cancelling…";
+      try{
+        const m = await writeMarket(); if (!m){ b.disabled=false; b.textContent="Cancel listing"; return; }
+        const tx = await m.cancelListing(id); await tx.wait();
+        toast("Listing for #" + id + " cancelled."); loadMarket();
+      }catch(e){ toast("Cancel failed."); b.disabled=false; b.textContent="Cancel listing"; }
+    });
+  }catch(e){ wrap.style.display = "none"; }
+}
+$("marketRefresh").onclick = loadMarket;
+loadMarket();
+
+$("copyPrompt").onclick = async () => {
+  try{ await navigator.clipboard.writeText($("agentPrompt").textContent); toast("Agent prompt copied."); }
+  catch(e){ toast("Copy failed — select the text manually."); }
+};
+
+/* ---------- signature effects: falling leaves, scroll reveal, box tilt ---------- */
+(function(){
+  const host = $("leaves");
+  const leafSVG = '<svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2 C18 7 20 13 12 22 C4 13 6 7 12 2Z" fill="#0e7a4f" opacity="0.8"/><path d="M12 5 V20" stroke="#0a5c3c" stroke-width="1.2"/></svg>';
+  for (let i = 0; i < 11; i++){
+    const s = document.createElement("span");
+    s.className = "leaf";
+    s.style.left = (Math.random()*98) + "vw";
+    s.style.animationDuration = (13 + Math.random()*14) + "s";
+    s.style.animationDelay = (-Math.random()*24) + "s";
+    s.style.transform = "scale(" + (0.6 + Math.random()*0.9) + ")";
+    s.innerHTML = leafSVG;
+    s.firstChild.style.animationDuration = (2.2 + Math.random()*2.4) + "s";
+    host.appendChild(s);
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
+  const stage = document.querySelector(".stage"), tilt = $("boxTilt");
+  if (stage && tilt && matchMedia("(pointer:fine)").matches){
+    stage.addEventListener("mousemove", ev => {
+      const r = stage.getBoundingClientRect();
+      const x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;
+      tilt.style.transform = "perspective(700px) rotateY(" + (x*13).toFixed(2) + "deg) rotateX(" + (-y*11).toFixed(2) + "deg)";
+    });
+    stage.addEventListener("mouseleave", () => { tilt.style.transform = "perspective(700px)"; });
+  }
+})();
+</script>
+</body>
+</html>
